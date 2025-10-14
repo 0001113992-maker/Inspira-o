@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inspira.dev</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f0f0f;
+      color: #f1f1f1;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2em;
+    }
+
+    header h1 span {
+      color: #00ffcc;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #00ffcc;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    #quote-box {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    #quote {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      transition: opacity 0.5s ease;
+    }
+
+    button {
+      background: #00ffcc;
+      border: none;
+      padding: 10px 20px;
+      color: #000;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00e6b3;
+    }
+
+    .social {
+      list-style: none;
+      padding: 0;
+    }
+
+    .social li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    .social a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Inspira<span>.dev</span></h1>
+    <nav>
+      <a href="#home">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section id="home" class="container">
+    <div id="quote-box">
+      <p id="quote">Clique no botão para se inspirar!</p>
+      <button onclick="newQuote()">Nova Inspiração</button>
+    </div>
+  </section>
+
+  <section id="sobre" class="container">
+    <h2>Sobre</h2>
+    <p>O <strong>Inspira.dev</strong> é um projeto que traz frases motivacionais para inspirar você no dia a dia – seja você dev ou não.</p>
+  </section>
+
+  <section id="contato" class="container">
+    <h2>Contato</h2>
+    <p>Nos siga nas redes:</p>
+    <ul class="social">
+      <li><a href="#">GitHub</a></li>
+     </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Inspira.dev • Criado por Gizele Santos ☕ e 💻</p>
+  </footer>
+
+  <script>
+    const quotes = [
+      "A persistência é o caminho do êxito. – Charles Chaplin",
+      "Não espere por oportunidades, crie-as. – George Bernard Shaw",
+      "A melhor maneira de prever o futuro é criá-lo. – Peter Drucker",
+      "Grandes feitos são feitos de pequenas vitórias. – Vincent Van Gogh",
+      "Seja a mudança que você quer ver no mundo. – Gandhi",
+      "O sucesso nasce do querer, da determinação e da persistência. – José de Alencar",
+      "Tudo parece impossível até que seja feito. – Nelson Mandela",
+      "Não é sobre ter tempo, é sobre fazer tempo. – Autor desconhecido",
+      "Sempre parece impossivel até que seja feito. - Nelson Mandela",
+      "Não tenhamos pressa, mas não percamos tempo. - José Saramago", 
+      "A persistência é o caminho do êxito. - Charlie Shaplin",
+      "O que fazemos agora ecoa na eternidade. - Marco Aurélio",
+      "Tu te tornas eternamente responsável por aquilo que cativas. - Pequeno Príncipe",
+      "Só se vê bem com op coração,o essencial é invissivél aos olhos. - Pequeno Príncipe",
+    ];
+    function newQuote() {
+      const quoteElement = document.getElementById('quote');
+      quoteElement.style.opacity = 0;
+
+      setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        quoteElement.textContent = quotes[randomIndex];
+        quoteElement.style.opacity = 1;
+      }, 300);
+    }
+  </script>
+</body>
+</html>
+
